@@ -1,0 +1,26 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %title= content_for?(:title) ? yield(:title) : Rails.application.class.module_parent_name
+    %meta{charset: 'utf-8'}
+    %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
+    %meta{content: 'width=device-width, initial-scale=1', :name => 'viewport'}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    = render 'layouts/navbar'
+    .container-fluid
+      = yield :header
+    .container-fluid
+      .row
+        .col-md-8.col-md-offset-2
+          = render 'layouts/messages'
+    .container-fluid
+      .row
+        .col-md-10.col-md-offset-1
+          = yield
+    .container-fluid
+      = render 'layouts/bottom'

@@ -1,0 +1,29 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - custom_logger.gemspec
+    - bin/console
+    - **/*.haml
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
